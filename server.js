@@ -119,10 +119,10 @@ io.on('connection', (socket) => {
             var from = userObj.user_id;
             var list = _userConnections.filter(p => p.meeting_id == meetingid);
             list.forEach(v => {
-                socket.to(v.connectionId).emit('showChatMessage',{from:from,message:msg,userID: user_id,time:getCurrDateTime()});
+                socket.to(v.connectionId).emit('showChatMessage',{from:from,message:msg,userID: from,time:getCurrDateTime()});
             });
 
-            socket.emit('showChatMessage',{from:from,message:msg,userID: user_id,time:getCurrDateTime()});
+            socket.emit('showChatMessage',{from:from,message:msg,userID: from,time:getCurrDateTime()});
         }
         
     });//end of reset
