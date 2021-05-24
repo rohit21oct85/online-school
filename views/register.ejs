@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-8" style="height: 90vh;">
+    <img src="image/conference.jpg" style="height: 98%;width: 98%;">
+  </div>
+  <div class="col-md-4  text-center" style="padding:10px;">
+    <img class="mb-4" src="image/logo.png" alt="kikai Logo" style="width: 30%; margin: 0 auto;">
+    <form action="/register" method="post" class="form-signin text-center card" style="padding:20px 25px;">
+    
+    <h1 class="h4 text-left mb-3 font-weight-normal"> <span class="fa fa-user"></span> Register</h1>
+    <hr style="margin-top:5px;">
+
+    <%- include('./layouts/message') %>
+    <label for="name" class="sr-only">Full name</label>
+    <input type="text" id="name" name="name" 
+          value="<%= typeof name != 'undefined' ? name : ''%>"
+          required
+          class="form-control" autocomplete="nope" placeholder="Full Name" autofocus
+      >
+    <label for="email" class="sr-only">Email address</label>
+    <input type="email" id="email" name="email" 
+    value="<%= typeof email != 'undefined' ? email : ''%>"
+    required
+    class="form-control" autocomplete="nope" placeholder="Email address" autofocus>
+    <label for="mobile" class="sr-only">Mobile No</label>
+    <input type="text" id="mobile" name="mobile" 
+    value="<%= typeof mobile != 'undefined' ? mobile : ''%>"
+    required
+    class="form-control" autocomplete="nope" placeholder="+91 123456" autofocus>
+    <label for="password" class="sr-only">Password</label>
+    <input type="password" id="password" name="password"  
+    value="<%= typeof password != 'undefined' ? password : ''%>"
+    required
+    class="form-control" autocomplete="nope" placeholder="Password">
+    <label for="confirm_pass" class="sr-only">Confirm Password</label>
+    <input type="password" id="confirm_pass" name="confirm_pass" 
+    value="<%= typeof confirm_pass != 'undefined' ? confirm_pass : ''%>"
+    required
+    class="form-control" autocomplete="nope" placeholder="Confirm password">
+ 
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Register Now</button>
+    <br>
+    <span class="text-success text-left pull-left">No account...?  <a href="/login" > Login Now</a></span>
+  
+  </form>
+  </div>
+</div>

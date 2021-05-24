@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 p-0 mt-3 mb-3">
+            <%- include('./layouts/message') %>
+            <div class="row">
+                <form action="/create-meeting" class="col-md-6" method="post">
+                    <div class="row">
+                    <div class="col-md-8">
+                        <input type="text" placeholder="Enter Room Name" name="room_name" id="room_name" 
+                        value="<%= typeof room_name != 'undefined' ? room_name : ''%>"
+                        class="form-control btn-sm" autocomplete="off"
+                        required >
+                        <input type="hidden" name="user_id" id="user_id" value="<%= user._id %>">
+                    </div>
+                    <div class="col-md-4 pl-0">
+                        <button type="submit" class="btn btn-block btn-sm btn-success">Instent Meeting</button>
+                    </div>    
+                </div>
+                </form>
+                <div class="col-md-6">
+                <div class="row">
+                   <div class="col-md-8">
+                        <input type="text" name="room_name" id="room_id"
+                        placeholder="Enter Room Id"
+                        class="form-control" autocomplete="off"
+                        required >
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" id="joinMeeting" class="btn btn-sm btn-warning">Join Meeting</button>
+                    </div>
+                </div>
+                </div> 
+            </div>
+
+        </div>
+        <div class="col-md-12 p-0">
+            <h4>Meeting Rooms</h4>
+            <div class="col-md-12 p-0">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Meeting Room Name</th>
+                            <th>Room Id</th>
+                            <th>Start Meeting</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% meetings.forEach( (el,index) => {%> 
+                        <tr>
+                            <td><%= el.room_name %></td>
+                            <td><%= el.room_id %></td>
+                            <td>
+                                <a href="/start-meeting/<%= el.room_id %>" class="text-success">Start Meeting</a>
+                                <a href="/delete-meeting/<%= el._id %>">
+                                <span class="fa fa-trash text-danger ml-5" style="cursor: pointer;"></span>
+                                </a>
+                            </td>
+                        </tr>
+                        <% })%>
+                    </tbody>
+                </table>
+            </div>
+
+            
+        </div>
+    </div>
+    </div>
