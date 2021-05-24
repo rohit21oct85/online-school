@@ -66,17 +66,15 @@ button:focus {
   outline: none;
 }
 .userbox video {
-  width: 100vw;
-  height: calc(90vh - 50px);
+  width: 100%;
+  margin: 0 auto !important;
 }
 #right_thumbnails_div {
   display: flex;
-  /* padding: 0 1rem; */
   flex-wrap: wrap;
   justify-content: space-around;
   overflow-y: auto;
   height: calc(100vh - 55px);
-  padding-bottom: 70px;
 }
 #right_thumbnails_div > div {
   width: 50%;
@@ -261,8 +259,8 @@ i#btnsend {
   border-radius: 50%;
   font-size: 8rem;
   position: absolute;
-  left: 42%;
   top: 35%;
+  left: 20%;
 }
 .user_remote {
   display: inline-block;

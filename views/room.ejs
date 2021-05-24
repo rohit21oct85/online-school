@@ -86,9 +86,8 @@ function myTimer() {
                     <!-- row no-gutters -->
                     <div class="d-flex container_flex">
                         <!-- col-lg-6 col-md-6 col-12 -->
-                        <div class="">
+                        <div class="col-md-6 pl-0">
                             <div id="me" class="userbox">
-                                
                                 <h2 class="meeting_host_name"></h2>
                                 <div style="position: relative" class="flex justify-content items-center">
                                     <div class="user_indication_me" id="user_indication_me">
@@ -100,7 +99,7 @@ function myTimer() {
                             </div>
                         </div>
                         <!-- col-lg-6 col-md-6 col-12 -->
-                        <div class="" id="right_thumbnails_div" style="display: none">
+                        <div class="col-md-6 pr-2" id="right_thumbnails_div" style="display: none">
                             <div id="otherTemplate" class="userbox" style="display:none">
                                 <h2 class="otherTemplateTitle"></h2>
                                 <div style="position: relative">
@@ -130,7 +129,6 @@ function myTimer() {
                         <%if(meeting.room_host === user.id) { %>
                             <button id="btnStartStopScreenshare" class="btn function_btn"><i class="fas fa-desktop" title="Screen Share"></i></button>
                             <button id="btnResetMeeting" class="btn function_btn"><i class="fas fa-redo" title="End Meeting"></i></button>
-                            
                             <button id="btnStartReco" class="btn function_btn" style="display: none"><i class="fas fa-record-vinyl" title="Record Meeting"></i></button>
                             <button id="btnPauseReco" style="display:none">Pause</button>
                             <button id="btnResumeReco" style="display:none">Resume</button>
